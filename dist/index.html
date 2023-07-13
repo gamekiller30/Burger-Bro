@@ -289,10 +289,11 @@ border-radius: 2px;
 .credit-box{
   background-color: whitesmoke;
   position: fixed;
-  height: 20vh;
-  width: 50vw;
+ min-height: 20vh;
+  min-width: 50vw;
   top: 40%;
   left: 25%;
+  right: 25%;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -304,9 +305,15 @@ border-radius: 2px;
   cursor: pointer;
 }
 
-.credit{
+.credit-box > div + div{
   font-size: 2em;
 }
+
+.credit-box > div + div + div{
+  margin-top: 20px;
+}
+
+
 
 .credit-close{
   position: absolute;
