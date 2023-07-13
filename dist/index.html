@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurent</title>
+  
+  <!--Font Awesome Icons-->
+  <script src="https://kit.fontawesome.com/9990c5d7cd.js" crossorigin="anonymous"></script>
+
+<style>
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 2px rgba(21, 20, 20, 0.4);
+  }
+  
+
+
+  .logo > img{
+    width: 100px;
+    height: auto;
+  }
+
+  .logo > img:hover{
+    cursor: pointer;
+  }
+
+.fa-burger{
+  font-size: 4.5em;
+  transition: all .4s ease;
+}
+
+.fa-burger:hover{
+  color: orange;
+  cursor: pointer;
+  transform: translateY(-20%);
+}
+
+.menu-overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(14, 14, 14, 0.9);
+  display: none;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.link-list{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-self: center;
+  gap: 40px;
+  font-size: 5em;
+}
+
+
+
+.link-list > a{
+  text-decoration: none;
+  color: orange;
+}
+
+.link-list > a:hover{
+  text-decoration:line-through;
+
+
+}
+
+.close{
+font-size: 4em;
+position: absolute;
+top: 2%;
+right: 2%;
+color: white;
+}
+
+.close:hover{
+  cursor: pointer;
+  color: orange;
+}
+
+
+.deal-section{
+  height: 700px;
+  background-image: url("./b28f88b12843ef40375353201f71062a.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content > h1{
+  font-size: 5em;
+}
+
+.content{
+  background-color: rgba(14, 14, 14, 0.5);
+  padding: 40px;
+  min-height: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 2px;
+  gap: 10px;
+}
+
+.content > h3{
+  font-size: 3em;
+}
+
+.content > .price{
+color: rgb(153, 111, 33);
+font-size: 2em;
+padding: 5px 10px;
+border-radius: 5px;
+background-color: orange;
+font-style: italic;
+}
+.footer{
+  background-color: rgb(247, 247, 247);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+
+}
+
+.menu-item{
+display: flex;
+align-items: center;
+column-gap: 20px;
+background-color: rgba(241, 160, 9, 0.3);
+padding: 20px;
+font-size: 10px;
+border-radius: 10px;
+}
+
+.left > img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transition: all .2s ease-in-out;
+}
+
+.left > img:hover{
+cursor: pointer;
+transform: scale(1.2);
+}
+
+.right > h3{
+font-size: 3em;
+}
+.right > p{
+font-size: 2.5em;
+margin-top: 5px;
+}
+
+.right > p + p{
+font-size: 2.3em;
+font-style: italic;
+font-weight: 600;
+margin-top: 5px;
+}
+
+.menu-grid{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 20px;
+  padding: 30px;
+margin-bottom: 50px;
+}
+
+.menu-header{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+}
+.menu-header> h1{
+font-size: 2.5em;
+border-bottom: 2px dotted orange;
+font-style: italic;
+}
+
+
+.flex-header{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.flex-header > h1{
+  border-bottom: 2px dotted orange;
+  font-style: italic;
+}
+
+
+.up{
+  display: flex;
+  flex-direction: column;
+  }
+
+  form{
+padding: 20px;
+display: flex;
+justify-content: center;
+height: 600px;
+
+  }
+
+  .input-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+input[type="text"]{
+  font-size: 1.4em;
+    outline: none;
+    height: 50px;
+    padding-left: 10px;
+  }
+
+  textarea{
+    height: 350px;
+    max-height: 400px;
+    max-width: 100%;
+    outline: none;
+    padding: 10px;
+    font-size: 1.5em;
+  }
+
+
+  .btn-section > button{
+padding: 10px 25px;
+background-color: orange;
+border: none;
+font-size: 1.2em;
+border-radius: 2px;
+  }
+
+  .btn-section > button:hover{
+    cursor: pointer;
+  }
+
+  .from-wrapper{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+.Credit{
+  padding-left: 10px;
+}
+
+.f-text{
+  padding-right: 10px;
+}
+
+.credit-box{
+  background-color: whitesmoke;
+  position: fixed;
+  height: 20vh;
+  width: 50vw;
+  top: 40%;
+  left: 25%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.Credit:hover{
+  cursor: pointer;
+}
+
+.credit{
+  font-size: 2em;
+}
+
+.credit-close{
+  position: absolute;
+  top: 4%;
+  right: 1%;
+  font-size: 1.5em;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  border-radius: 50%;
+}
+
+.credit-close:hover{
+  background-color: lightgray;
+  cursor: pointer;
+}
+</style>
+
+
+</head>
+<body>
+
+  <!--Burger Resrataurent, Colors: yellow, blue?, white-->
+<div class="navbar">
+
+
+  <div class="logo">
+
+<img src="./1c605b027c547735bbfa2ec217cfaf13.jpg"> 
+  </div>
+
+
+
+
+  <div class="burger-menu">
+    <i class="fa-solid fa-burger"></i>
+  </div>
+
+</div>
+
+<div class="menu-overlay">
+
+<div class="link-list">
+
+<a href="#" class="link" id="home">Home</a>
+<a href="#" class="link" id="menu">Menu</a>
+<a href="#" class="link" id="about">About Us</a>
+
+</div>
+
+<div class="close">
+
+X
+
+</div>
+
+</div>
+
+
+<!--Content-->
+<div class="content-section">
+  
+
+<div class="deal-section">
+
+  <div class="content">
+
+<h1>Deal of the Day</h1>
+
+<h3>Our selfmade Burger with 2 Pattys and grilled cheese</h3>
+
+<div class="price"> $10.99</div>
+
+</div>
+
+
+</div>
+
+
+<!--Main End-->
+</div>
+
+
+<div class="footer">
+
+  <div class="f-text">  Copyright@2023 gamekiller 3.0 
+     </div> |
+  <div class="Credit">Credit</div>
+
+</div>
+
+
+<div class="credit-box">
+
+  <div class="credit-close">
+    X 
+    </div>
+
+  <div class="credit">
+  Home Logo Image by <a href="https://www.freepik.com/free-vector/gradient-barbecue-logo-template_15291802.htm#page=2&query=burger%20logo&position=1&from_view=keyword&track=ais" target="_blank">Freepik</a>
+</div>
+
+<div class="credit">
+  Big Burger Background  <a href="https://www.freepik.com/free-photo/side-view-double-cheeseburger-with-grilled-beef-patties-cheese-lettuce-leaf-burger-buns_8196280.htm#page=2&query=burger&position=31&from_view=search&track=sph"  target="_blank">Image by stockking</a> on Freepik
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+  
+</body>
+</html>
