@@ -17,6 +17,9 @@ const credit_box = document.querySelector(".credit-box");
 const credit_close = document.querySelector(".credit-close");
 
 
+//Start Site wille be Home
+Home();
+
 links.forEach((item) => {
 
 item.addEventListener("click", (e) =>{
